@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7237fef1ae88dca49a468aba643ce395
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - light_prefab: {fileID: 3364770827969860919, guid: bcbafd76c2d80ab4498d6c743b00bbe4,
+      type: 3}
+  - fan_prefab: {fileID: 4625786237583786048, guid: 98aeab9b05cbdd14c97d040ff5929f11,
+      type: 3}
+  - ceiling: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
