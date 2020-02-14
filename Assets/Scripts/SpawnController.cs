@@ -35,6 +35,8 @@ public class SpawnController : MonoBehaviour
     public void SpawnLight()
     {
         prop_clone = Instantiate(prop_prefab).transform;
+        prop_clone.name = "sw" + GameManager.instance.ctr;
+        GameManager.instance.ctr++;
         prop_clone.parent = ceiling;
     }
 
@@ -59,7 +61,7 @@ public class SpawnController : MonoBehaviour
         GetInput();
 
         sc = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        sc.y = ceiling.position.y - .5f;
+        sc.y = ceiling.position.y + 5.3f;
 
         sc.x = Mathf.RoundToInt(sc.x);
         sc.z = Mathf.RoundToInt(sc.z);
@@ -71,16 +73,16 @@ public class SpawnController : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Debug.Log(prop_clone.localPosition.x + " and " + (ceiling.GetChild(0).localScale.x * 10 / 2 - distanceFromWall));
-        Debug.Log(prop_clone.localPosition.z + " and " + (ceiling.GetChild(0).localScale.z * 10 / 2 - distanceFromWall));
-        if( Mathf.Abs(prop_clone.localPosition.x) > Mathf.Abs(ceiling.GetChild(0).localScale.x * 10 / 2 - distanceFromWall) ||
-            Mathf.Abs(prop_clone.localPosition.z) > Mathf.Abs(ceiling.GetChild(0).localScale.z * 10 / 2 - distanceFromWall))
+        Debug.Log(prop_clone.localPosition.x + " and " + (ceiling.GetChild(0).localScale.x / 2 - distanceFromWall));
+        Debug.Log(prop_clone.localPosition.z + " and " + (ceiling.GetChild(0).localScale.z / 2 - distanceFromWall));
+        if( Mathf.Abs(prop_clone.localPosition.x) > Mathf.Abs(ceiling.GetChild(0).localScale.x / 2 - distanceFromWall) ||
+            Mathf.Abs(prop_clone.localPosition.z) > Mathf.Abs(ceiling.GetChild(0).localScale.z / 2 - distanceFromWall))
         {
             Destroy(prop_clone.gameObject); //use polling system later if needed
         }
         else
         {
-            prop_clone.localPosition = new Vector3(prop_clone.localPosition.x, .5f, prop_clone.localPosition.z);
+            prop_clone.localPosition = new Vector3(prop_clone.localPosition.x, 5.3f, prop_clone.localPosition.z);
         }
     }
 
