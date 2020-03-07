@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
     public int ctr = 0;
 
-    // Start is called before the first frame update
     void Awake()
     {
         if(instance == null)
@@ -23,7 +22,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        Plugin.instance.runner();
+    }
+
     void Update()
     {
 
