@@ -38,11 +38,13 @@ public class Light_Switching : MonoBehaviour
     {
         if (i)
         {
+            Plugin.instance.jc.Call("Light", "On");
             meshRenderer.sharedMaterial.mainTexture = tex1;
             parent.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
+            Plugin.instance.jc.Call("Light", "Off");
             meshRenderer.sharedMaterial.mainTexture = tex0;
             parent.GetChild(0).gameObject.SetActive(true);
         }

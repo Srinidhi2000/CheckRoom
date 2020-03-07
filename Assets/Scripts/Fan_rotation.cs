@@ -19,9 +19,17 @@ public class Fan_rotation : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {if (isTap)
-        { rotatable_part.Rotate(0, spinSpeed * Time.deltaTime, 0); }
-       // else { transform.Rotate(0, 0, 0); }
+    {
+        if (isTap)
+        { 
+            rotatable_part.Rotate(0, spinSpeed * Time.deltaTime, 0);
+            Plugin.instance.jc.Call("Fan", "On");
+        }
+        else
+        {
+            Plugin.instance.jc.Call("Fan", "Off");
+        }
+        // else { transform.Rotate(0, 0, 0); }
 
     }
 }

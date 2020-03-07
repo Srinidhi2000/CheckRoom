@@ -2152,7 +2152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490996, guid: 3277bc92a83c7764d9634755e06e86e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.85
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 490996, guid: 3277bc92a83c7764d9634755e06e86e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2396,6 +2396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127237613}
   - component: {fileID: 1127237614}
+  - component: {fileID: 1127237615}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2430,6 +2431,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ctr: 0
+--- !u!114 &1127237615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127237612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9f9841ab1cf4b41819cb91eba75ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1176586348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3454,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3249f1a21c9a49646a0bc3bd71b2a187, type: 2}
+  - {fileID: 2100000, guid: 3118dc35419f2e742b817529e074dc29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
