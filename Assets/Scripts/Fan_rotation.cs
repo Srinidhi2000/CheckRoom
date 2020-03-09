@@ -7,7 +7,7 @@ public class Fan_rotation : MonoBehaviour
     public Transform rotatable_part;
     float spinSpeed = 400.0f;
     public bool isTap = false;
-    // Start is called before the first frame update
+
     void OnMouseDown()
     {
         MouseDownHelper();
@@ -23,7 +23,8 @@ public class Fan_rotation : MonoBehaviour
 
     void Start()
     {
-        spinSpeed = Random.Range(300, 1000);
+        isTap = !GameManager.instance.states[GameManager.instance.ctr];
+        MouseDownHelper();
     }
 
     // Update is called once per frame

@@ -21,6 +21,9 @@ public class Light_Switching : MonoBehaviour
         parent = transform.parent;
         meshRenderer = parent.GetComponent<MeshRenderer>();
         meshRenderer.sharedMaterial = new_mat;
+
+        i = GameManager.instance.states[GameManager.instance.ctr];
+        SwitchLights();
     }
 
     // Update is called once per frame
