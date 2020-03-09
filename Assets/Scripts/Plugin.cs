@@ -37,6 +37,8 @@ public class Plugin : MonoBehaviour
         //use this to set ON OFF state inside UNITY
         //jc.Call("getState");
 
+        //jc.Call<ArrayList>("getStateInit");
+
         //2.Call this from Unity to change to a diff fan light where str is a string with topic name
         //jc.Call("setTopic",str)
 

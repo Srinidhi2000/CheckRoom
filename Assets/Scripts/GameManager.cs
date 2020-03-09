@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int ctr = 0;
 
+    public List<bool> states;
+
     void Awake()
     {
         if(instance == null)
@@ -25,6 +27,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Plugin.instance.runner();
+
+        states = new List<bool>();
+        ArrayList ar = Plugin.instance.jc.Call<ArrayList>("getStateInit");
+        for (int i = 0; i < ar.Count; i++)
+        {
+            states[i] = (bool)ar[i];
+        }
+        Plugin.instance.jc.Call("unsubscribe");
     }
 
     void Update()
