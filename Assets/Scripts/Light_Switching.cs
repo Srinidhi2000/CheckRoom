@@ -46,7 +46,7 @@ public class Light_Switching : MonoBehaviour
             meshRenderer.sharedMaterial.mainTexture = tex0;
             parent.GetChild(0).gameObject.SetActive(true);
         }
-        Plugin.instance.jc.Call("setTopic", gameObject.name);
+        Plugin.instance.jc.Call("setTopic", gameObject.name[2]);
         Plugin.instance.jc.Call("publish");
         i = !i;
     }
