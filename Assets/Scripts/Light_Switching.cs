@@ -7,7 +7,7 @@ public class Light_Switching : MonoBehaviour
 
     public Texture tex1;
     public Texture tex0;
-    private bool i = true;
+    public bool i = true;
     private Material new_mat;
     private MeshRenderer meshRenderer;
     private Transform parent;
@@ -21,6 +21,9 @@ public class Light_Switching : MonoBehaviour
         parent = transform.parent;
         meshRenderer = parent.GetComponent<MeshRenderer>();
         meshRenderer.sharedMaterial = new_mat;
+
+        i = GameManager.instance.states[GameManager.instance.ctr];
+        SwitchLights();
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class Light_Switching : MonoBehaviour
         SwitchLights();
     }
 
-    private void SwitchLights()
+    public void SwitchLights()
     {
         if (i)
         {

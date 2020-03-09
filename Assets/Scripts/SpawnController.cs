@@ -32,17 +32,21 @@ public class SpawnController : MonoBehaviour
         }
     }
 
-    public void SpawnLight()
+    public void SpawnProp()
     {
+
         prop_clone = Instantiate(prop_prefab).transform;
         prop_clone.name = "sw" + GameManager.instance.ctr;
-        GameManager.instance.ctr++;
+
+        Debug.Log("ctr = " + GameManager.instance.ctr);
+        Debug.Log("states[ctr] = " + GameManager.instance.states[GameManager.instance.ctr]);
+
         prop_clone.parent = ceiling;
     }
 
     private void OnMouseDown()
     {
-        SpawnLight();
+        SpawnProp();
     }
 
     private void OnMouseDrag()
@@ -66,7 +70,7 @@ public class SpawnController : MonoBehaviour
         sc.x = Mathf.RoundToInt(sc.x);
         sc.z = Mathf.RoundToInt(sc.z);
 
-        Debug.Log(sc);
+        //Debug.Log(sc);
         prop_clone.position = sc;
         
     }
@@ -82,6 +86,7 @@ public class SpawnController : MonoBehaviour
         }
         else
         {
+            GameManager.instance.ctr++;
             prop_clone.localPosition = new Vector3(prop_clone.localPosition.x, 5.3f, prop_clone.localPosition.z);
         }
     }
