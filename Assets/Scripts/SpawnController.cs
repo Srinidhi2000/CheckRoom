@@ -32,17 +32,32 @@ public class SpawnController : MonoBehaviour
         }
     }
 
-    public void SpawnLight()
+    public void SpawnProp()
     {
+
         prop_clone = Instantiate(prop_prefab).transform;
         prop_clone.name = "sw" + GameManager.instance.ctr;
+        if (prop_clone.GetChild(0).name.StartsWith("Capsule"))
+        {
+            Debug.Log("asdfgh");
+            Fan_rotation fan_Rotation = prop_clone.GetChild(1).GetComponent<Fan_rotation>();
+            fan_Rotation.isTap = !GameManager.instance.states[GameManager.instance.ctr];
+            fan_Rotation.MouseDownHelper();
+        }
+        else if (prop_clone.GetChild(0).name.StartsWith("Point"))
+        {
+            Debug.Log("asdfgh");
+            Light_Switching light_Switching = prop_clone.GetChild(1).GetComponent<Light_Switching>();
+            light_Switching.i = !GameManager.instance.states[GameManager.instance.ctr];
+            light_Switching.SwitchLights();
+        }
         GameManager.instance.ctr++;
         prop_clone.parent = ceiling;
     }
 
     private void OnMouseDown()
     {
-        SpawnLight();
+        SpawnProp();
     }
 
     private void OnMouseDrag()
