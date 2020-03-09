@@ -12,7 +12,7 @@ public class Fan_rotation : MonoBehaviour
     {
         isTap = !isTap;
         // else { transform.Rotate(0, 0, 0); }
-        Plugin.instance.jc.Call("setTopic", gameObject.name);
+        Plugin.instance.jc.Call("setTopic", gameObject.name[2]);
         Plugin.instance.jc.Call("publish");
     }
     void Start()
