@@ -38,6 +38,8 @@ public class SpawnController : MonoBehaviour
         prop_clone = Instantiate(prop_prefab).transform;
         prop_clone.name = "sw" + GameManager.instance.ctr;
 
+        Plugin.instance.jc.Call("subscribeNewSwitch");
+
         Debug.Log("ctr = " + GameManager.instance.ctr);
         Debug.Log("states[ctr] = " + GameManager.instance.states[GameManager.instance.ctr]);
 
