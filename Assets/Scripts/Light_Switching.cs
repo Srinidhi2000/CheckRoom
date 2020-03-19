@@ -50,7 +50,7 @@ public class Light_Switching : MonoBehaviour
             parent.GetChild(0).gameObject.SetActive(true);
         }
         //Plugin.instance.jc.Call("setTopic", gameObject.name[2]);
-        Plugin.instance.jc.Call("publish",gameObject.name.replace("sw",""));
+        Plugin.instance.jc.Call("publish",gameObject.name.Replace("sw",""));
         i = !i;
     }
 }
