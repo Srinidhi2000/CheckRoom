@@ -31,13 +31,13 @@ public class GameManager : MonoBehaviour
         states = new List<bool>();
         ArrayList ar = Plugin.instance.jc.Call<ArrayList>("getStateInit");
         // To Test using rpi/hardware/mqtt
-        /*
+        
         for (int i = 0; i < ar.Count; i++)
         {
-            states.Add((int)ar[i] == 1 ? true : false);
+            states.Add((String)ar[i] == "1" ? true : false);
         }
-        */
-
+        
+/*
         // To Test in Unity
         states.Add(true);
         states.Add(false);
@@ -54,12 +54,10 @@ public class GameManager : MonoBehaviour
         states.Add(true);
         states.Add(false);
         states.Add(true);
-
-        for (int i = 0; i < states.Count; i++)
+*/
+       for (int i = 0; i < states.Count; i++)
             Debug.Log(states[i]);
-
-            Plugin.instance.jc.Call("unsubscribe");
-    }
+  }
 
     void Update()
     {
